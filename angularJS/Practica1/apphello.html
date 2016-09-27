@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MyFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi primer pagina AngularJS</title>
+    <script src="JS/angular.min.js" type="text/javascript"></script>
+    <script src="Controller/controller.js"></script>
+</head>
+<body ng-controller="FirstController">
+<p>{{"Hola " + nombre}}</p>
+
+    Comentario:<input type="text" ng-model="nuevoComentario.comentario">
+    <br>
+    Usuario:<input type="text" ng-model="nuevoComentario.username">
+    <br>
+    <button ng-click="agregarComentario()">Agregar Comentario"
+        </button>
+    <h3>Comentarios</h3>
+        <ul>
+    <li ng-repeat="comentario in comentarios">
+        {{comentario.comentario}} - <strong>{{comentario.username}}</strong>
+    </li>
+</ul>
+<ul>
+    <li ng-repeat="post in posts">
+        <h2>{{post.title}}</h2>
+        <p>{{post.body}}</p>
+    </li>
+</ul>
+//obteniendo datos de JSON con $http.get
+<h1>----------------JSON con $http.get -------------------</h1>
+<ul>
+    <li ng-repeat="post in posts">
+        <h2>{{post.title}}</h2>
+        <p>
+            {{post.body}}
+        </p>
+    </li>
+</ul>
+</body>
+</html>

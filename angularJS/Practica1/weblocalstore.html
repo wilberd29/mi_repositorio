@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ToDoList">
+<head>
+    <meta charset="UTF-8">
+    <title>uso de ToDoList</title>
+    <script src="JS/angular.min.js" type="text/javascript"></script>
+    <script src="JS/angular-local-storage.min.js"></script>
+    <script src="Controller/ControllerStorage.js"></script>
+</head>
+<body ng-controller="ToDoController">
+<ul>
+    <li ng-repeat="actividad in todo">
+        {{actividad.descripcion}} - {{actividad.fecha | date: 'short'}}
+    </li>
+</ul>
+<form ng-submit="addAct()">
+    <p>Descripción:<input type="text" ng-model="newAct.descripcion"></p>
+
+    <p>Fecha:<input type="datetime-local" ng-model="newAct.fecha"></p>
+    <input type="submit" value="Guardar Actividad">
+</form>
+</body>
+</html>
